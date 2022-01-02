@@ -18,6 +18,11 @@
         android:id="@+id/detailFragment"
         android:name="com.example.harajtask.detail.DetailFragment"
         android:label="DetailFragment"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="selectedProduct"
+            app:argType="com.example.harajtask.models.Product"
+            />
+    </fragment>
 
 </navigation>
