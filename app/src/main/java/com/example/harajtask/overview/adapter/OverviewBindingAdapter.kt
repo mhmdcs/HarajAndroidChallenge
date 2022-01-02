@@ -24,5 +24,5 @@ fun fetchImage(imgView: ImageView, imgSrc: String?){
 @BindingAdapter("productsList")
 fun bindRecyclerView(recyclerView: RecyclerView, productsList: List<Product>?){
     val adapter = recyclerView.adapter as OverviewListAdapter
-    adapter.submitlist(productsList)
+    adapter.submitList(productsList)
 }
