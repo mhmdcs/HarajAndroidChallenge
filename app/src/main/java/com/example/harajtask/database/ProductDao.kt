@@ -11,9 +11,9 @@ import com.example.harajtask.models.Product
 interface ProductDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(vararg product: Product)
+    suspend fun insertAll(vararg product: Product)
 
     @Query("SELECT * FROM products_table")
-    fun getCachedProducts(): LiveData<List<Product>>
+    suspend fun getProducts(): LiveData<List<Product>>
 
 }

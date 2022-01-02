@@ -1,6 +1,7 @@
 package com.example.harajtask.network
 
 import com.example.harajtask.models.Product
+import com.example.harajtask.models.ProductResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -24,7 +25,7 @@ private val retrofit = Retrofit.Builder()
 interface HarajApiService {
 
     @GET("JStXV")
-    suspend fun getProducts(): List<Product>
+    suspend fun getProducts(): ProductResponse
 
 }
 
