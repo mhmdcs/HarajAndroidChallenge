@@ -8,6 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".overview.OverviewFragment">
 
+<!--        app:productsList="@{viewModel.prodcuts}"-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/products_list_recyclerview"
             android:layout_width="0dp"

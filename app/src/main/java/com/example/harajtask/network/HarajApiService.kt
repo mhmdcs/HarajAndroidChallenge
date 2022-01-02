@@ -24,7 +24,7 @@ private val retrofit = Retrofit.Builder()
 interface HarajApiService {
 
     @GET("JStXV")
-    suspend fun getProducts(type: String): List<Product>
+    suspend fun getProducts(): List<Product>
 
 }
 

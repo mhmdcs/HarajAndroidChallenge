@@ -1,6 +1,6 @@
 package com.example.harajtask.overview
 
-enum class  MarsApiStatus {LOADING, ERROR, SUCCESS}
+enum class  HarajApiStatus {LOADING, ERROR, SUCCESS}
 
 class OverviewViewModel {
 }

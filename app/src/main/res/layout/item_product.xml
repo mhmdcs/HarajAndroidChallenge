@@ -9,15 +9,16 @@
             name="product"
             type="com.example.harajtask.models.Product" />
 
-        <!--    <variable-->
-        <!--        name=""-->
-        <!--        type="" />-->
+            <variable
+                name="clickListener"
+                type="com.example.harajtask.overview.adapter.ProductClickListener" />
     </data>
 
-    <!--    android:onClick=""-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{()-> clickListener.onClick(product)}"
+    >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

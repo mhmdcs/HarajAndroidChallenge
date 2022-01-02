@@ -92,7 +92,7 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$version_glide"
     annotationProcessor "com.github.bumptech.glide:compiler:$version_glide"
 
-    // RecyclerView to reuses item views in a list for better performance
+    // RecyclerView to use a ListAdapter that reuses item views in a list for better performance
     implementation "androidx.recyclerview:recyclerview:$version_recyclerview"
 
     // Unit testing libraries
