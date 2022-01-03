@@ -9,9 +9,6 @@
             name="product"
             type="com.example.harajtask.models.Product" />
 
-        <!--    <variable-->
-        <!--        name=""-->
-        <!--        type="" />-->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,11 +63,11 @@
             android:id="@+id/icon_user"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="@dimen/default_margin_small"
             android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin_small"
             android:src="@drawable/ic_user"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detail_product_time_textview"            />
+            app:layout_constraintTop_toBottomOf="@id/detail_product_time_textview" />
 
         <TextView
             android:id="@+id/detail_product_username_textview"
@@ -89,18 +86,18 @@
             android:id="@+id/icon_location"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginEnd="@dimen/icon_margin"
             android:layout_marginTop="@dimen/default_margin_small"
+            android:layout_marginEnd="@dimen/icon_margin"
             android:src="@drawable/ic_location"
             app:layout_constraintEnd_toStartOf="@id/item_product_location_textview"
-            app:layout_constraintTop_toBottomOf="@id/detail_product_time_textview"            />
+            app:layout_constraintTop_toBottomOf="@id/detail_product_time_textview" />
 
         <TextView
             android:id="@+id/item_product_location_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/default_margin"
             android:layout_marginTop="@dimen/default_margin_small"
+            android:layout_marginEnd="@dimen/default_margin"
             android:layout_marginBottom="@dimen/default_margin_small"
             android:text="@{product.city}"
             android:textColor="@color/black"
@@ -113,14 +110,14 @@
             android:id="@+id/detail_product_description_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
             android:layout_marginTop="@dimen/default_margin"
             android:layout_marginEnd="@dimen/default_margin"
-            android:layout_marginStart="@dimen/default_margin"
             android:text="@{product.body}"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_product_username_textview"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" />
 

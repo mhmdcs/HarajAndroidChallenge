@@ -39,8 +39,8 @@ class DetailFragment : Fragment() {
 
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
-       //intent.putExtra(Intent.EXTRA_SUBJECT, "mock data")
-       //intent.putExtra(Intent.EXTRA_TEXT, "mock data")
+        //intent.putExtra(Intent.EXTRA_SUBJECT, "mock data")
+        //intent.putExtra(Intent.EXTRA_TEXT, "mock data")
         startActivity(Intent.createChooser(intent, "Share"))
         return super.onOptionsItemSelected(item)
     }

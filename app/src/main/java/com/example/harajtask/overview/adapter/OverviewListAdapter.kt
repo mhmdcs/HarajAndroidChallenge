@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.harajtask.databinding.ItemProductBinding
 import com.example.harajtask.models.Product
 
-class OverviewListAdapter(private val clickListener: ProductClickListener)
-    : ListAdapter<Product, ProductViewHolder>(ProductDiffCallback), Filterable {
+class OverviewListAdapter(private val clickListener: ProductClickListener) :
+    ListAdapter<Product, ProductViewHolder>(ProductDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        return ProductViewHolder.from(parent,clickListener)
+        return ProductViewHolder.from(parent, clickListener)
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
@@ -22,33 +22,20 @@ class OverviewListAdapter(private val clickListener: ProductClickListener)
         holder.bind(item)
     }
 
-    override fun getFilter(): Filter {
-        return filterList
-    }
-
-    val filterList = object: Filter() {
-        override fun performFiltering(constraint: CharSequence?): FilterResults {
-            TODO("Not yet implemented")
-        }
-
-        override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-            TODO("Not yet implemented")
-        }
-
-    }
-
 }
 
-class ProductViewHolder(private val binding: ItemProductBinding, private val clickListener: ProductClickListener)
-    : RecyclerView.ViewHolder(binding.root){
+class ProductViewHolder(
+    private val binding: ItemProductBinding,
+    private val clickListener: ProductClickListener
+) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(product: Product){
-            binding.product = product
-            binding.clickListener = clickListener
-        }
+    fun bind(product: Product) {
+        binding.product = product
+        binding.clickListener = clickListener
+    }
 
     companion object {
-        fun from(parent: ViewGroup, clickListener: ProductClickListener): ProductViewHolder{
+        fun from(parent: ViewGroup, clickListener: ProductClickListener): ProductViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
             val binding = ItemProductBinding.inflate(layoutInflater, parent, false)
 
@@ -58,10 +45,11 @@ class ProductViewHolder(private val binding: ItemProductBinding, private val cli
 
 }
 
-object ProductDiffCallback: DiffUtil.ItemCallback<Product>() {
+object ProductDiffCallback : DiffUtil.ItemCallback<Product>() {
     override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean = oldItem == newItem
 
-    override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean = oldItem == newItem
+    override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean =
+        oldItem == newItem
 }
 
 fun interface ProductClickListener {

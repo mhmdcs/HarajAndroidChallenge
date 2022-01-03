@@ -13,7 +13,7 @@ import com.example.harajtask.repository.Repository
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
-class OverviewViewModel(application: Application): AndroidViewModel(application) {
+class OverviewViewModel(application: Application) : AndroidViewModel(application) {
 //    enum class  HarajApiStatus {LOADING, ERROR, SUCCESS}
 
     private val database = HarajDatabase.getInstance(application)
@@ -23,7 +23,7 @@ class OverviewViewModel(application: Application): AndroidViewModel(application)
     val navigateToDetailFragment: LiveData<Product>
         get() = _navigateToDetailFragment
 
-    val productList  = repo.getCachedProducts
+    val productList = repo.getCachedProducts
 
     init {
         viewModelScope.launch {
@@ -31,11 +31,11 @@ class OverviewViewModel(application: Application): AndroidViewModel(application)
         }
     }
 
-    fun productClicked(product: Product){
+    fun productClicked(product: Product) {
         _navigateToDetailFragment.value = product
     }
 
-    fun doneNavigation(){
+    fun doneNavigation() {
         _navigateToDetailFragment.value = null
     }
 

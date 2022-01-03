@@ -34,7 +34,8 @@ class OverviewFragment : Fragment() {
 
         viewModel.navigateToDetailFragment.observe(viewLifecycleOwner, Observer { product ->
             product?.let {
-                val action = OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(product)
+                val action =
+                    OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(product)
                 NavHostFragment.findNavController(this).navigate(action)
                 viewModel.doneNavigation()
             }
@@ -48,22 +49,8 @@ class OverviewFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.search_menu, menu)
-
         val menuItem = menu.findItem(R.id.action_search)
-
         val searchView = menuItem.actionView as SearchView
-
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                TODO("Not yet implemented")
-            }
-
-        })
 
     }
 

@@ -13,7 +13,7 @@ import com.example.harajtask.R
 import com.example.harajtask.models.Product
 
 @BindingAdapter("productImage")
-fun fetchImage(imgView: ImageView, imgSrc: String?){
+fun fetchImage(imgView: ImageView, imgSrc: String?) {
     imgSrc?.let {
         val uri = imgSrc.toUri().buildUpon().scheme("https").build()
 
@@ -26,7 +26,7 @@ fun fetchImage(imgView: ImageView, imgSrc: String?){
 }
 
 @BindingAdapter("productsList")
-fun bindRecyclerView(recyclerView: RecyclerView, productsList: List<Product>?){
+fun bindRecyclerView(recyclerView: RecyclerView, productsList: List<Product>?) {
     val adapter = recyclerView.adapter as OverviewListAdapter
     adapter.submitList(productsList)
 }

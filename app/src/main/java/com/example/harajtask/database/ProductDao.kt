@@ -14,10 +14,14 @@ interface ProductDao {
     suspend fun insertAll(vararg product: Product)
 
     @Query("SELECT * FROM products_table")
-     fun getProducts(): LiveData<List<Product>>
+    fun getProducts(): LiveData<List<Product>>
 
     @Query("DELETE FROM products_table")
     fun clearDatabase()
+
+
+    @Query("SELECT * FROM products_table WHERE title LIKE :searchQuery OR city LIKE :searchQuery")
+    fun searchDatabase(searchQuery: String): LiveData<List<Product>>
 
 
 }

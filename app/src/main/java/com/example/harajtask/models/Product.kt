@@ -8,7 +8,7 @@ import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
-@Entity (tableName = "products_table")
+@Entity(tableName = "products_table")
 @Parcelize
 data class Product(
     val title: String,
@@ -18,4 +18,4 @@ data class Product(
     val city: String,
     @PrimaryKey val date: String,
     val body: String,
-): Parcelable
+) : Parcelable
