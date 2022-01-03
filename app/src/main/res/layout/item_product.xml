@@ -17,7 +17,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{()-> clickListener.onClick(product)}">
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{()-> clickListener.onClick(product)}"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,11 +27,11 @@
 
             <ImageView
                 android:id="@+id/item_product_imageview"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="110dp"
+                android:layout_marginTop="@dimen/default_margin_small"
+                android:layout_height="110dp"
                 android:layout_marginStart="@dimen/default_margin_small"
                 android:layout_marginBottom="@dimen/default_margin_small"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:productImage="@{product.thumbURL}"

@@ -14,7 +14,6 @@ import retrofit2.http.Query
 import java.util.*
 
 //the github shortened file link that points to the forked repo's json file will act as a mock API https://git.io/JStXV
-//https://raw.githubusercontent.com/mhmdcs/HarajAndroidChallenge/main/app/src/main/assets/data.json
 private const val BASE_URL = "https://git.io/"
 
 private val moshi = Moshi.Builder()

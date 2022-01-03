@@ -13,9 +13,9 @@ import com.example.harajtask.overview.OverviewViewModel
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
-//    private val viewModel: DetailViewModel by lazy {
-//        ViewModelProvider(this).get(DetailViewModel::class.java)
-//    }
+    private val viewModel: DetailViewModel by lazy {
+        ViewModelProvider(this).get(DetailViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +23,8 @@ class DetailFragment : Fragment() {
     ): View {
         binding = FragmentDetailBinding.inflate(inflater)
 
+        val product = DetailFragmentArgs.fromBundle(requireArguments()).selectedProduct
+        binding.product = product
 
         return binding.root
     }

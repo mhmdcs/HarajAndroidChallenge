@@ -1,4 +1,8 @@
 package com.example.harajtask.detail
 
-class DetailViewModel {
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+
+class DetailViewModel(application: Application): AndroidViewModel (application){
+
 }

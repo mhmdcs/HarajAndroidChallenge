@@ -19,23 +19,17 @@ class OverviewViewModel(application: Application): AndroidViewModel(application)
     private val database = HarajDatabase.getInstance(application)
     private val repo = Repository(database)
 
-    private val _products = MutableLiveData<List<ProductNetwork>>()
-    val products: LiveData<List<ProductNetwork>>
-        get() = _products
-
     private val _navigateToDetailFragment = MutableLiveData<ProductNetwork>()
     val navigateToDetailFragment: LiveData<ProductNetwork>
         get() = _navigateToDetailFragment
 
     val productList  = repo.getCachedProducts
 
-
     init {
         viewModelScope.launch {
             repo.refreshProducts()
         }
     }
-
 
     fun productClicked(product: ProductNetwork){
         _navigateToDetailFragment.value = product
