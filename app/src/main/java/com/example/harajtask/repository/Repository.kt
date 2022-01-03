@@ -25,7 +25,8 @@ class Repository(private val database: HarajDatabase) {
         try {
         val productResult = HarajApi.retrofitService.getProducts()
         val parsedProductResult = parseProductJsonResult(JSONObject(productResult))
-        database.productDao.insertAll(*parsedProductResult.asDatabaseModel())
+       // database.productDao.insertAll(*parsedProductResult.asDatabaseModel())
+            database.productDao.clearDatabase()
         }
         catch (error: Exception){
             error.printStackTrace()

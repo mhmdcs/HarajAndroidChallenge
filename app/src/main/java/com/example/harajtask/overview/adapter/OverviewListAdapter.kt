@@ -2,6 +2,8 @@ package com.example.harajtask.overview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +11,7 @@ import com.example.harajtask.databinding.ItemProductBinding
 import com.example.harajtask.models.ProductNetwork
 
 class OverviewListAdapter(private val clickListener: ProductClickListener)
-    : ListAdapter<ProductNetwork, ProductViewHolder>(ProductDiffCallback) {
+    : ListAdapter<ProductNetwork, ProductViewHolder>(ProductDiffCallback), Filterable {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         return ProductViewHolder.from(parent,clickListener)
@@ -18,6 +20,21 @@ class OverviewListAdapter(private val clickListener: ProductClickListener)
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
+    }
+
+    override fun getFilter(): Filter {
+        return filterList
+    }
+
+    val filterList = object: Filter() {
+        override fun performFiltering(constraint: CharSequence?): FilterResults {
+            TODO("Not yet implemented")
+        }
+
+        override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+            TODO("Not yet implemented")
+        }
+
     }
 
 }

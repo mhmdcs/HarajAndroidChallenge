@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.harajtask.models.ProductDatabase
 
-@Database(entities = [ProductDatabase::class], version = 4, exportSchema = false)
+@Database(entities = [ProductDatabase::class], version = 4)
 abstract class HarajDatabase: RoomDatabase()
 {
     abstract val productDao: ProductDao
@@ -17,7 +17,7 @@ abstract class HarajDatabase: RoomDatabase()
         private var INSTANCE: HarajDatabase? = null
 
         fun getInstance(context: Context): HarajDatabase{
-            synchronized(this){
+            return synchronized(this){
                 var instance = INSTANCE
                 if (instance == null){
                     instance = Room.databaseBuilder(
@@ -29,7 +29,7 @@ abstract class HarajDatabase: RoomDatabase()
                         .build()
                     INSTANCE = instance
                 }//if-statement boundaries
-                return instance
+                 instance
             }
         }
 

@@ -16,4 +16,8 @@ interface ProductDao {
     @Query("SELECT * FROM products_table")
      fun getProducts(): LiveData<List<ProductDatabase>>
 
+    @Query("DELETE FROM products_table")
+    fun clearDatabase()
+
+
 }
