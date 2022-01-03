@@ -9,16 +9,15 @@
             name="product"
             type="com.example.harajtask.models.ProductNetwork" />
 
-            <variable
-                name="clickListener"
-                type="com.example.harajtask.overview.adapter.ProductClickListener" />
+        <variable
+            name="clickListener"
+            type="com.example.harajtask.overview.adapter.ProductClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{()-> clickListener.onClick(product)}"
-    >
+        android:onClick="@{()-> clickListener.onClick(product)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -29,7 +28,6 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="@dimen/default_margin_small"
-                android:layout_marginTop="@dimen/default_margin_small"
                 android:layout_marginBottom="@dimen/default_margin_small"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,42 +63,80 @@
                 app:layout_constraintTop_toBottomOf="@id/item_product_title_textview"
                 tools:text="Since 3 hours ago" />
 
+            <ImageView
+                android:id="@+id/icon_chat_bubble"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin_small"
+                android:src="@drawable/ic_baseline_chat_bubble_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_product_time_textview"
+                />
+
             <TextView
                 android:id="@+id/item_product_comment_textview"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
-                android:layout_marginEnd="@dimen/default_margin"
                 android:layout_marginBottom="@dimen/default_margin_small"
+                android:layout_marginEnd="@dimen/icon_margin"
                 android:text="@{product.commentCount}"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/text_size" tools:text="3"
+                app:layout_constraintEnd_toStartOf="@id/icon_chat_bubble"
                 app:layout_constraintTop_toBottomOf="@id/item_product_time_textview"
-                tools:text="3 Comments" />
+                />
+
+            <ImageView
+                android:id="@+id/icon_user"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:src="@drawable/ic_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/item_product_comment_textview"
+                />
 
             <TextView
                 android:id="@+id/item_product_username_textview"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
-                android:layout_marginEnd="@dimen/default_margin"
-                android:layout_marginBottom="@dimen/default_margin_small"
+                android:layout_marginEnd="@dimen/icon_margin"
+                android:layout_marginBottom="@dimen/default_margin"
                 android:text="@{product.username}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size"
+                tools:text="Abdulrahman"
+                app:layout_constraintEnd_toStartOf="@id/icon_user"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/item_product_comment_textview"
-                tools:text="Abdulrahman" />
+                />
+
+            <ImageView
+                android:id="@+id/icon_location"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:src="@drawable/ic_location"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/item_product_location_textview"
+                />
 
             <TextView
                 android:id="@+id/item_product_location_textview"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/icon_margin"
                 android:layout_marginStart="@dimen/default_margin"
                 android:layout_marginTop="@dimen/default_margin"
-                android:layout_marginBottom="@dimen/default_margin_small"
+                android:layout_marginBottom="@dimen/default_margin"
                 android:text="@{product.city}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size"
