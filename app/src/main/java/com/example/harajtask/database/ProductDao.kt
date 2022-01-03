@@ -14,6 +14,6 @@ interface ProductDao {
     suspend fun insertAll(vararg product: Product)
 
     @Query("SELECT * FROM products_table")
-    suspend fun getProducts(): LiveData<List<Product>>
+     fun getProducts(): LiveData<List<Product>>
 
 }

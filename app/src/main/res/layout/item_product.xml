@@ -31,7 +31,6 @@
                 android:layout_marginStart="@dimen/default_margin_small"
                 android:layout_marginTop="@dimen/default_margin_small"
                 android:layout_marginBottom="@dimen/default_margin_small"
-                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -44,11 +43,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin_small"
                 android:layout_marginEnd="@dimen/default_margin"
+                android:singleLine="true"
                 android:text="@{product.title}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/header_text_size"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/item_product_imageview"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Toyota Camry GLE 2019" />
 

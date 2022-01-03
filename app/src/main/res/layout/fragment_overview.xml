@@ -3,15 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.harajtask.overview.OverviewViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".overview.OverviewFragment">
 
-<!--        app:productsList="@{viewModel.prodcuts}"-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/products_list_recyclerview"
             android:layout_width="0dp"
+            app:productsList="@{viewModel.products}"
             android:layout_height="0dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
