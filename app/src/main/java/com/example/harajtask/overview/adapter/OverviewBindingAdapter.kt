@@ -10,7 +10,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.harajtask.R
-import com.example.harajtask.models.Product
+import com.example.harajtask.models.ProductNetwork
 
 @BindingAdapter("productImage")
 fun fetchImage(imgView: ImageView, imgSrc: String?){
@@ -26,7 +26,7 @@ fun fetchImage(imgView: ImageView, imgSrc: String?){
 }
 
 @BindingAdapter("productsList")
-fun bindRecyclerView(recyclerView: RecyclerView, productsList: List<Product>?){
+fun bindRecyclerView(recyclerView: RecyclerView, productsList: List<ProductNetwork>?){
     val adapter = recyclerView.adapter as OverviewListAdapter
     adapter.submitList(productsList)
 }

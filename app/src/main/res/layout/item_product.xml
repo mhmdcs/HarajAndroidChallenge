@@ -7,7 +7,7 @@
 
         <variable
             name="product"
-            type="com.example.harajtask.models.Product" />
+            type="com.example.harajtask.models.ProductNetwork" />
 
             <variable
                 name="clickListener"
