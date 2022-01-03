@@ -1,6 +1,5 @@
 package com.example.harajtask.network
 
-import com.example.harajtask.models.ProductNetwork
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types

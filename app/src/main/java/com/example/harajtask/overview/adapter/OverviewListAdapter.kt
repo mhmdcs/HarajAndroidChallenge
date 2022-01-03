@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.harajtask.databinding.ItemProductBinding
-import com.example.harajtask.models.ProductNetwork
+import com.example.harajtask.models.Product
 
 class OverviewListAdapter(private val clickListener: ProductClickListener)
-    : ListAdapter<ProductNetwork, ProductViewHolder>(ProductDiffCallback), Filterable {
+    : ListAdapter<Product, ProductViewHolder>(ProductDiffCallback), Filterable {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         return ProductViewHolder.from(parent,clickListener)
@@ -42,7 +42,7 @@ class OverviewListAdapter(private val clickListener: ProductClickListener)
 class ProductViewHolder(private val binding: ItemProductBinding, private val clickListener: ProductClickListener)
     : RecyclerView.ViewHolder(binding.root){
 
-        fun bind(product: ProductNetwork){
+        fun bind(product: Product){
             binding.product = product
             binding.clickListener = clickListener
         }
@@ -58,12 +58,12 @@ class ProductViewHolder(private val binding: ItemProductBinding, private val cli
 
 }
 
-object ProductDiffCallback: DiffUtil.ItemCallback<ProductNetwork>() {
-    override fun areItemsTheSame(oldItem: ProductNetwork, newItem: ProductNetwork): Boolean = oldItem == newItem
+object ProductDiffCallback: DiffUtil.ItemCallback<Product>() {
+    override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean = oldItem == newItem
 
-    override fun areContentsTheSame(oldItem: ProductNetwork, newItem: ProductNetwork): Boolean = oldItem == newItem
+    override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean = oldItem == newItem
 }
 
 fun interface ProductClickListener {
-    fun onClick(product: ProductNetwork)
+    fun onClick(product: Product)
 }

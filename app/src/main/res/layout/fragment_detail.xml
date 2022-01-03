@@ -7,7 +7,7 @@
 
         <variable
             name="product"
-            type="com.example.harajtask.models.ProductNetwork" />
+            type="com.example.harajtask.models.Product" />
 
         <!--    <variable-->
         <!--        name=""-->

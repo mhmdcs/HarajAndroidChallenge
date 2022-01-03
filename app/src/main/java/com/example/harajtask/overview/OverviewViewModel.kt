@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.harajtask.database.HarajDatabase
-import com.example.harajtask.models.ProductNetwork
+import com.example.harajtask.models.Product
 import com.example.harajtask.network.HarajApi
 import com.example.harajtask.repository.Repository
 import kotlinx.coroutines.async
@@ -19,8 +19,8 @@ class OverviewViewModel(application: Application): AndroidViewModel(application)
     private val database = HarajDatabase.getInstance(application)
     private val repo = Repository(database)
 
-    private val _navigateToDetailFragment = MutableLiveData<ProductNetwork>()
-    val navigateToDetailFragment: LiveData<ProductNetwork>
+    private val _navigateToDetailFragment = MutableLiveData<Product>()
+    val navigateToDetailFragment: LiveData<Product>
         get() = _navigateToDetailFragment
 
     val productList  = repo.getCachedProducts
@@ -31,7 +31,7 @@ class OverviewViewModel(application: Application): AndroidViewModel(application)
         }
     }
 
-    fun productClicked(product: ProductNetwork){
+    fun productClicked(product: Product){
         _navigateToDetailFragment.value = product
     }
 

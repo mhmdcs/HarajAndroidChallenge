@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="selectedProduct"
-            app:argType="com.example.harajtask.models.ProductNetwork"
+            app:argType="com.example.harajtask.models.Product"
             />
     </fragment>
 

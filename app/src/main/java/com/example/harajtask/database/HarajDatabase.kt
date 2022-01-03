@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.harajtask.models.ProductDatabase
+import com.example.harajtask.models.Product
 
-@Database(entities = [ProductDatabase::class], version = 4)
+@Database(entities = [Product::class], version = 5)
 abstract class HarajDatabase: RoomDatabase()
 {
     abstract val productDao: ProductDao
