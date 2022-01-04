@@ -3,12 +3,13 @@ package com.example.harajtask.models
 import android.annotation.SuppressLint
 import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
-@Entity(tableName = "products_table")
+@Entity(tableName = "products_table", indices = [Index(value = ["thumbURL"], unique = true)])
 @Parcelize
 data class Product(
     val title: String,
@@ -16,6 +17,7 @@ data class Product(
     val thumbURL: String,
     val commentCount: String,
     val city: String,
-    @PrimaryKey val date: String,
+    val date: String,
     val body: String,
+    @PrimaryKey (autoGenerate = true) val id: Long = 0
 ) : Parcelable

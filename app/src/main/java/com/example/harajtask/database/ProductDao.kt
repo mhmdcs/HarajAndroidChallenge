@@ -10,7 +10,7 @@ import com.example.harajtask.models.Product
 @Dao
 interface ProductDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(vararg product: Product)
 
     @Query("SELECT * FROM products_table")
@@ -19,6 +19,8 @@ interface ProductDao {
     @Query("DELETE FROM products_table")
     fun clearDatabase()
 
+    @Query ("SELECT * FROM products_table WHERE id = :productId")
+    fun getProductById(productId: Int): Product?
 
     @Query("SELECT * FROM products_table WHERE title LIKE :searchQuery OR city LIKE :searchQuery")
     fun searchDatabase(searchQuery: String): LiveData<List<Product>>

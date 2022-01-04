@@ -3,6 +3,8 @@ package com.example.harajtask.network
 import com.example.harajtask.models.Product
 import org.json.JSONObject
 import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 fun parseProductJsonResult(jsonObject: JSONObject): ArrayList<Product> {
 

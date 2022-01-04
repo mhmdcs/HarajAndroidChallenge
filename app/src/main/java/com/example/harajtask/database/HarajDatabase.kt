@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.harajtask.models.Product
 
-@Database(entities = [Product::class], version = 7)
+@Database(entities = [Product::class], version = 15)
 abstract class HarajDatabase : RoomDatabase() {
     abstract val productDao: ProductDao
 

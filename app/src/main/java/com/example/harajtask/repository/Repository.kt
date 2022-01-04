@@ -22,7 +22,7 @@ class Repository(private val database: HarajDatabase) {
             val productResult = HarajApi.retrofitService.getProducts()
             val parsedProductResult = parseProductJsonResult(JSONObject(productResult))
             database.productDao.insertAll(*parsedProductResult.toTypedArray())
-            //     database.productDao.clearDatabase()
+            //    database.productDao.clearDatabase()
         } catch (error: Exception) {
             error.printStackTrace()
             Log.i("Repository", "Fetch data Error $error")

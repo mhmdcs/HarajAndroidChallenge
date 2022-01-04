@@ -14,10 +14,12 @@
             type="com.example.harajtask.overview.adapter.ProductClickListener" />
     </data>
 
+<!--    app:cardUseCompatPadding="true"-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginTop="1dp"
         android:onClick="@{()-> clickListener.onClick(product)}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
